@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TechTree/static/css/main.45ae3cb9.css",
+    "main.js": "/TechTree/static/js/main.91ee7e18.js",
+    "static/media/Shubham.png": "/TechTree/static/media/Shubham.e31a9d119987cb31cfc7.png",
+    "index.html": "/TechTree/index.html",
+    "main.45ae3cb9.css.map": "/TechTree/static/css/main.45ae3cb9.css.map",
+    "main.91ee7e18.js.map": "/TechTree/static/js/main.91ee7e18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45ae3cb9.css",
+    "static/js/main.91ee7e18.js"
+  ]
+}
