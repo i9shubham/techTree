@@ -12,9 +12,13 @@
     margin-bottom: 1.2rem;
     transition: 0.3s;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .link:hover{
     background-color: #fff;
-    color: #be3960;
+    color: #a33846;
 }
 .linkName{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

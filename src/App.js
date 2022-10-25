@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./Componants/Footer";
 import Links from "./Componants/Links";
 import Profile from "./Componants/Profile";
 function App(){
@@ -6,6 +7,7 @@ function App(){
     <div className="page">
     <Profile />
     <Links />
+    <Footer />
     </div>
   );
 }

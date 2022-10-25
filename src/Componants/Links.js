@@ -3,16 +3,16 @@ const Links = () => {
   return (
     <div className="linkDiv">
       <div className="link">
-        <a className="linkName">Linkedin</a>
+        <a className="linkName" href="https://www.github..com/Shubham7350">Linkedin</a>
       </div>
       <div className="link">
-        <a className="linkName">Twitter</a>
+        <a className="linkName" href="https://www.github..com/Shubham7350">Twitter</a>
       </div>
       <div className="link">
-        <a className="linkName">Github</a>
+        <a className="linkName" href="https://www.github..com/Shubham7350">Github</a>
       </div>
       <div className="link">
-        <a className="linkName">Instagram</a>
+        <a className="linkName" href="https://www.github..com/Shubham7350">Instagram</a>
       </div>
     </div>
   );
