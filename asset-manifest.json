@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/TechTree/static/css/main.9018b4f9.css",
-    "main.js": "/TechTree/static/js/main.c514c0fa.js",
+    "main.css": "/TechTree/static/css/main.e57baa15.css",
+    "main.js": "/TechTree/static/js/main.c773912d.js",
     "static/media/Shubham.png": "/TechTree/static/media/Shubham.e31a9d119987cb31cfc7.png",
     "index.html": "/TechTree/index.html",
-    "main.9018b4f9.css.map": "/TechTree/static/css/main.9018b4f9.css.map",
-    "main.c514c0fa.js.map": "/TechTree/static/js/main.c514c0fa.js.map"
+    "main.e57baa15.css.map": "/TechTree/static/css/main.e57baa15.css.map",
+    "main.c773912d.js.map": "/TechTree/static/js/main.c773912d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9018b4f9.css",
-    "static/js/main.c514c0fa.js"
+    "static/css/main.e57baa15.css",
+    "static/js/main.c773912d.js"
   ]
 }
