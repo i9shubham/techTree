@@ -6,11 +6,8 @@
 .profile-pic{
     height: 8rem;
     border-radius: 10rem;
-    background-image: linear-gradient(#ee6f71, #be3960);
-    box-shadow: 0 0 5px #00000040;
+    box-shadow: 0 0 5px #d90d3270 inset;
 }
 h1, p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
     text-align: center;
 }

@@ -1,5 +1,5 @@
 import "./Profile.css";
-import myImage from "./Shubham.png";
+import myImage from "../Images/profile.png";
 const Profile = () => {
   return (
     <>

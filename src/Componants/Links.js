@@ -1,8 +1,11 @@
 import "./Links.css";
 const Links = () => {
+  const dothis = () =>{
+    alert("Working")
+  }
   return (
     <div className="linkDiv">
-      <a className="linkName" href="https://www.linkedin.com/in/shubham-ingole">
+      <a className="linkName" href="https://www.linkedin.com/in/shubham-ingole" onClick={dothis}>
         <div className="link">Linkedin</div>
       </a>
 
