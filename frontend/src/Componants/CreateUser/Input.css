@@ -1,0 +1,24 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40vw;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2rem;
+    margin-bottom: 25px;
+}
+
+form div, form > div > input, form > div > select {
+    width: 90%;
+}
+
+
+#socialHandle, #urlInput{
+    padding: 0.5rem;
+    margin-bottom: 25px;
+}
+
+.addSocial{
+    position: relative;
+}

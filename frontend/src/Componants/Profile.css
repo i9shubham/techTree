@@ -1,13 +1,25 @@
-.profileDiv{
+.profileDiv {
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
 }
 
-.profile-pic{
+.profile-pic {
     height: 8rem;
     border-radius: 10rem;
-    box-shadow: 0 0 5px #d90d3270 inset;
+    /* box-shadow: 0 0 5px #d90d3270 inset; */
 }
-h1, p{
+
+h1,
+p {
     text-align: center;
+    color: #000;
+}
+
+.tools {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    color: #000;
 }

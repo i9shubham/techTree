@@ -1,10 +1,18 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  color: #d90d32;
+  /* color: #d90d32; */
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
   /* background-image: linear-gradient(#be3960); */
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-image: url('/public/blurred-hotel-reception.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }

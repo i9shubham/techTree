@@ -1,30 +1,46 @@
-import "./Links.css";
+import './Links.css';
 const Links = () => {
-  const dothis = () =>{
-    alert("Working")
-  }
-  return (
-    <div className="linkDiv">
-      <a className="linkName" href="https://www.linkedin.com/in/shubham-ingole" onClick={dothis}>
-        <div className="link">Linkedin</div>
-      </a>
+    return (
+        <div className='linkDiv'>
+            <div className='link'>
+                <a
+                    className='linkName'
+                    href='https://www.linkedin.com/in/shubham-ingole'
+                >
+                    Linkedin
+                </a>
+            </div>
 
-      <a className="linkName" href="https://www.twitter.com/twtShubz">
-        <div className="link">Twitter</div>
-      </a>
+            <div className='link'>
+                <a className='linkName' href='https://www.twitter.com/twtShubz'>
+                    Twitter
+                </a>
+            </div>
 
-      <a className="linkName" href="https://www.github.com/Shubham7350">
-        <div className="link">Github</div>
-      </a>
+            <div className='link'>
+                <a
+                    className='linkName'
+                    href='https://www.github.com/Shubham7350'
+                >
+                    Github
+                </a>
+            </div>
 
-      <a className="linkName" href="https://www.instagram.com/ishubham___">
-        <div className="link">Instagram</div>
-      </a>
+            <div className='link'>
+                <a
+                    className='linkName'
+                    href='https://www.instagram.com/ishubham___'
+                >
+                    Instagram
+                </a>
+            </div>
 
-      <a className="linkName" href="https://www.geeksguide.xyz/">
-        <div className="link">Blog Website</div>
-      </a>
-    </div>
-  );
+            <div className='link'>
+                <a className='linkName' href='https://shubhamingole.me/'>
+                    Website
+                </a>
+            </div>
+        </div>
+    );
 };
 export default Links;
