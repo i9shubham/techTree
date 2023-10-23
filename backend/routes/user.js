@@ -3,8 +3,10 @@ import userController from '../methods/userController.js';
 
 const router = express.Router();
 
+router.get('/getTree/:username', userController.getUserById);
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
-router.get('/getUserById/:id', userController.getUserById);
+router.post('/createTree', userController.createTree);
+router.put('/changeTheme', userController.changeTheme);
 
 export default router;
