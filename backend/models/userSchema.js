@@ -1,49 +1,48 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const User = mongoose.Schema(
     {
         username: {
             type: String,
             require: true,
-            unique: true
+            unique: true,
         },
         name: {
             type: String,
-            require: true
+            require: true,
         },
         email: {
             type: String,
             require: true,
-            unique: true
+            unique: true,
         },
         password: {
             type: String,
-            require: true
+            require: true,
         },
         image: {
-            type: String
+            type: String,
         },
-        socials: {
-            linkedin: {
-                type: String
+        socials: [
+            {
+                _id: false,
+                name: String,
+                link: String,
             },
-            twitter: {
-                type: String
+        ],
+        theme: {
+            bg: {
+                type: String,
             },
-            github: {
-                type: String
+            heading: {
+                type: String,
             },
-            instagram: {
-                type: String
+            txt: {
+                type: String,
             },
-            website: {
-                type: String
-            },
-            other: {
-                type: String
-            }
-        }
-    }
-)
+        },
+    },
+    { versionKey: false }
+);
 
 export default mongoose.model('User', User);
