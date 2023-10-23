@@ -1,0 +1,16 @@
+.tree{
+    height: 40vh;
+    margin: 0 auto;
+    mix-blend-mode: multiply;
+}
+
+.create-link-comp{
+    height: 2rem;
+    width: 12rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1% 0 0;
+    background-color: #fff;
+}
