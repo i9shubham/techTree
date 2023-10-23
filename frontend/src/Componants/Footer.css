@@ -1,9 +1,12 @@
 .footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 3rem 0;
 }
 
 p{
-    color: #d90d32;;
+    color: #000;
 }
