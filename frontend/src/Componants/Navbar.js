@@ -45,7 +45,7 @@ function Navbar() {
                 <Toolbar disableGutters>
                     <AcUnitIcon
                         sx={{
-                            color: 'yellow',
+                            color: '#000',
                             display: { xs: 'none', md: 'flex' },
                             mr: 1,
                         }}
@@ -149,7 +149,7 @@ function Navbar() {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: '#000', display: 'block' }}
                             >
                                 {page}
                             </Button>
