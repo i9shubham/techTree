@@ -9,4 +9,5 @@ router.post('/login', userController.login);
 router.post('/createTree', userController.createTree);
 router.put('/changeTheme', userController.changeTheme);
 
+router.get('/checkUserName/:username', userController.checkUserName);
 export default router;
