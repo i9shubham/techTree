@@ -36,11 +36,17 @@ const functions = {
             const { username, email, bio, password } = req.body;
             // console.log(req.body)
             if (!username || !email || !password)
-                res.json({ message: 'enter the all fields' });
+                return res.send(200).send({
+                    code: 400,
+                    message: 'enter the all fields',
+                    success: false,
+                });
             const exists = await userModel.findOne({ email });
             if (exists)
-                return res.json({
+                return res.status(200).send({
+                    code: 400,
                     message: 'User is already exists please try to login',
+                    success: false,
                 });
 
             const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -53,12 +59,21 @@ const functions = {
             // console.log(User)
             await User.save();
             if (!User) {
-                res.json({ message: 'User not created' });
+                return res.status(200).send({
+                    code: 400,
+                    message: 'User not created',
+                    success: false,
+                });
+            } else {
+                return res.send(200).send({
+                    code: 201,
+                    message: `User ${User.username} created successfully`,
+                    success: true,
+                });
             }
-            res.json(`User ${User.username} created successfully`);
         } catch (error) {
             // console.log(error);
-            res.status(500).send({
+            return res.status(500).send({
                 code: 500,
                 message: 'Internal Server Error',
                 success: false,
