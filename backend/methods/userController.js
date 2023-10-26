@@ -33,9 +33,9 @@ const validateUserTree = (user) => {
 const functions = {
     signup: async (req, res) => {
         try {
-            const { username, name, email, password } = req.body;
+            const { username, email, bio, password } = req.body;
             // console.log(req.body)
-            if (!username || !name || !email || !password)
+            if (!username || !email || !password)
                 res.json({ message: 'enter the all fields' });
             const exists = await userModel.findOne({ email });
             if (exists)
@@ -46,8 +46,8 @@ const functions = {
             const hashedPassword = await bcrypt.hash(password, saltRounds);
             const User = new userModel({
                 username,
-                name,
                 email,
+                bio,
                 password: hashedPassword,
             });
             // console.log(User)
@@ -100,10 +100,8 @@ const functions = {
 
     getUserById: async (req, res) => {
         try {
-            const username = req.params.username
-            const user = await userModel
-                .findOne({ username: username })
-                .exec();
+            const username = req.params.username;
+            const user = await userModel.findOne({ username: username }).exec();
             if (user) {
                 res.status(200).send({
                     code: 200,
@@ -205,6 +203,37 @@ const functions = {
                     message: 'Theme Successfully changed',
                     type: 'success',
                     docs: user,
+                });
+            }
+        } catch (error) {
+            console.log(error);
+            res.status(500).send({
+                code: 500,
+                message: 'Internal Server Error',
+                success: false,
+            });
+        }
+    },
+
+    checkUserName: async (req, res) => {
+        try {
+            const data = await userModel
+                .findOne({ username: req.params.username })
+                .lean();
+            // console.log(data);
+            if (!data) {
+                console.log('not data');
+                res.status(200).send({
+                    code: 200,
+                    message: 'Username is available',
+                    success: true,
+                });
+            } else {
+                console.log('data');
+                res.status(200).send({
+                    code: 400,
+                    message: 'Username is already taken',
+                    success: false,
                 });
             }
         } catch (error) {
