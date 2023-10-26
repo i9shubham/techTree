@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 // import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import Person4Icon from '@mui/icons-material/Person4';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -28,7 +28,7 @@ function Navbar() {
     };
     const handleOpenUserMenu = (event) => {
         // setAnchorElUser(event.currentTarget);
-        navigate('/ishubham');
+        navigate('/godfather');
     };
 
     const handleCloseNavMenu = () => {
@@ -40,7 +40,13 @@ function Navbar() {
     // };
 
     return (
-        <AppBar position='fixed' sx={{backgroundColor: 'transparent', backdropFilter: 'blur(10px)'}}>
+        <AppBar
+            position='fixed'
+            sx={{
+                backgroundColor: 'transparent',
+                backdropFilter: 'blur(10px)',
+            }}
+        >
             <Container maxWidth='xl'>
                 <Toolbar disableGutters>
                     <AcUnitIcon
@@ -162,7 +168,14 @@ function Navbar() {
                                 onClick={handleOpenUserMenu}
                                 sx={{ p: 0 }}
                             >
-                                <GitHubIcon color='#000' sx={{color: '#000', width: '15', height: '15'}} />
+                                <Person4Icon
+                                    color='#000'
+                                    sx={{
+                                        color: '#000',
+                                        width: '15',
+                                        height: '15',
+                                    }}
+                                />
                             </IconButton>
                         </Tooltip>
                     </Box>
