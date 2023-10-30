@@ -11,6 +11,10 @@ const User = mongoose.Schema(
             type: String,
             require: true,
         },
+        theme: {
+            type: Schema.Types.ObjectId,
+            ref: 'theme',
+        },
         email: {
             type: String,
             require: true,
