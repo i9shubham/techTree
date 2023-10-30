@@ -12,7 +12,7 @@ const User = mongoose.Schema(
             require: true,
         },
         theme: {
-            type: Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'theme',
         },
         email: {
