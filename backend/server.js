@@ -3,13 +3,15 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoConnection from './config/dbconfig.js';
 import logger from 'morgan';
-
+import bodyParser from 'body-parser';
 import userRoutes from './routes/user.js';
 import themeRoutes from './routes/theme.js';
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 app.use(logger('dev'));
 mongoConnection();
