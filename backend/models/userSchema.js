@@ -30,21 +30,10 @@ const User = mongoose.Schema(
         socials: [
             {
                 _id: false,
-                name: String,
-                link: String,
+                name: { type: String },
+                link: { type: String },
             },
         ],
-        theme: {
-            bg: {
-                type: String,
-            },
-            heading: {
-                type: String,
-            },
-            txt: {
-                type: String,
-            },
-        },
     },
     { versionKey: false }
 );
