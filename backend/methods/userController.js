@@ -116,7 +116,7 @@ const functions = {
     getUserById: async (req, res) => {
         try {
             const username = req.params.username;
-            const user = await userModel.findOne({ username: username }).exec();
+            const user = await userModel.findOne({ username: username }).populate('theme').exec();
             if (user) {
                 res.status(200).send({
                     code: 200,
