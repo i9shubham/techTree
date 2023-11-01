@@ -16,4 +16,4 @@ const Theme = mongoose.Schema(
     }
 );
 
-export default mongoose.model('Theme', Theme);
+export default mongoose.model('theme', Theme);
