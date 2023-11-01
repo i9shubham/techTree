@@ -2,14 +2,14 @@ import mongoose from 'mongoose';
 
 const Theme = mongoose.Schema(
     {
-        name: String,
-        bgImage: String,
-        bio: String,
+        name: { type: String },
+        bgImage: { type: String },
+        bio: { type: String },
         button: {
-            text: String,
-            bg: String,
+            text: { type: String },
+            bg: { type: String },
         },
-        font: string,
+        font: { type: String },
     },
     {
         versionKey: false,
