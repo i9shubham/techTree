@@ -6,7 +6,7 @@ import './index.css';
 const Homepage = () => {
     const navigate = useNavigate();
     const handleTreeInputClick = () => {
-        navigate('/createTree');
+        navigate('/signup');
     };
     return (
         <div className='page'>
