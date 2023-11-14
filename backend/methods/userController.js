@@ -36,7 +36,7 @@ const functions = {
             const { username, email, bio, password } = req.body;
             // console.log(req.body)
             if (!username || !email || !password)
-                return res.send(200).send({
+                return res.status(200).send({
                     code: 400,
                     message: 'enter the all fields',
                     success: false,
@@ -65,7 +65,7 @@ const functions = {
                     success: false,
                 });
             } else {
-                return res.send(200).send({
+                return res.status(200).send({
                     code: 201,
                     message: `User ${User.username} created successfully`,
                     success: true,
@@ -116,7 +116,10 @@ const functions = {
     getUserById: async (req, res) => {
         try {
             const username = req.params.username;
-            const user = await userModel.findOne({ username: username }).populate('theme').exec();
+            const user = await userModel
+                .findOne({ username: username })
+                .populate('theme')
+                .exec();
             if (user) {
                 res.status(200).send({
                     code: 200,
