@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/getTree/:username', userController.getUserById);
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
-router.put('/createTree', userController.createTree);
+router.put('/createTree/:username', userController.createTree);
 router.put('/changeTheme', userController.changeTheme);
 
 router.get('/checkUserName/:username', userController.checkUserName);
