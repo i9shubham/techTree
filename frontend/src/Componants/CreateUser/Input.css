@@ -14,6 +14,12 @@ form {
     border-radius: 10px;
 }
 
+.submitSocial {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 form div,
 form>div>input,
 form>div>select {
