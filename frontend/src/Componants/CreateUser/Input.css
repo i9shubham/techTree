@@ -1,24 +1,50 @@
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 40vw;
+    width: 100%;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 2rem;
-    margin-bottom: 25px;
 }
 
-form div, form > div > input, form > div > select {
+.singleSocial {
+    background-color: #ffffff50;
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+form div,
+form>div>input,
+form>div>select {
     width: 90%;
 }
 
 
-#socialHandle, #urlInput{
-    padding: 0.5rem;
-    margin-bottom: 25px;
+#socialHandle,
+#urlInput {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    width: 100%;
+    margin: 10px 0;
 }
 
-.addSocial{
+#socialHandle:focus,
+#urlInput:focus {
+    outline: none;
+    box-shadow: 0 0 4px #000;
+}
+
+.addSocial {
+    box-sizing: border-box;
+    padding: 0.4rem;
+    outline: none;
+    border: none;
+    border-radius: 4px;
     position: relative;
+    margin-bottom: 10px;
+    font-weight: bolder;
 }
