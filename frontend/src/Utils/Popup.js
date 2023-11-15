@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Error = styled.div`
@@ -19,15 +19,13 @@ const Error = styled.div`
 `;
 
 const Popup = (props) => {
-    console.log(props.error);
-    // const [error, setError] = useState(props.error);
-    // useEffect(() => {
+
     if (props.error !== null) {
         setTimeout(() => {
             props.setError();
         }, 3000);
     }
-    // }, [props]);
+    
     return (
         <div>
             {props.error !== null && (
