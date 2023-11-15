@@ -156,17 +156,17 @@ const functions = {
             //         type: 'error',
             //     });
             // } else {
-            const exists = await userModel
-                .findOne({ email: req.params.email })
-                .exec();
-            // console.log(exists);
-            if (exists) {
-                return res.status(400).send({
-                    code: 400,
-                    message: `Your tree is alredy exists kindly visit to url/${exists.username}`,
-                    type: 'error',
-                });
-            }
+            // const exists = await userModel
+            //     .findOne({ username: req.params.username })
+            //     .exec();
+            // // console.log(exists);
+            // if (exists) {
+            //     return res.status(400).send({
+            //         code: 400,
+            //         message: `Your tree is alredy exists kindly visit to url/${exists.username}`,
+            //         type: 'error',
+            //     });
+            // }
             const dataObj = userModel.updateOne(
                 { username: req.params.username },
                 req.body,
