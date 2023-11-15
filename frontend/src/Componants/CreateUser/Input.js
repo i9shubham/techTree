@@ -1,15 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Input.css';
+import { createTree } from '../../Services/tree';
+import Popup from '../../Utils/Popup';
+
 const Input = () => {
-    const [inputs, setInputs] = useState([{ socialHandle: '', url: '' }]);
+    const [error, setError] = useState(null);
+    const [inputs, setInputs] = useState([{ name: '', link: '' }]);
     // console.log('inputs ', inputs);
+
+    const setDefaultError = () => {
+        setError(null);
+    };
 
     const handleAddSocial = (e) => {
         e.preventDefault();
-        setInputs([...inputs, { socialHandle: '', url: '' }]);
+        setInputs([...inputs, { name: '', link: '' }]);
     };
 
-    const handleRemoveSocial = (i) => {
+    const handleRemoveSocial = (e, i) => {
+        e.preventDefault();
+        console.log(i);
         let list = [...inputs];
         list.splice(i, 1);
         setInputs(list);
@@ -22,6 +32,7 @@ const Input = () => {
         list[index][name] = value;
         setInputs(list);
     };
+
     const handleSelect = (e, index) => {
         const { value, name } = e.target;
         let list = [...inputs];
@@ -29,46 +40,87 @@ const Input = () => {
         setInputs(list);
     };
 
+    const options = [
+        'LinkedIn',
+        'Instagram',
+        'YouTube',
+        'GitHub',
+        'Facebook',
+        'Twitter',
+        'Blog',
+        'Codepen',
+        'Portfolio',
+        'Snapchat',
+        'Reddit',
+        'Other',
+    ];
+
+    const username = window.localStorage.getItem('user');
+    const updateTree = (e) => {
+        e.preventDefault();
+        const socials = [...inputs]
+        createTree(username, {socials: socials})
+            .then((res) => {
+                if (res.data.code === 201) {
+                    window.location.href = `/${username}`;
+                } else {
+                    setError(res?.data?.message);
+                }
+            })
+            .catch((err) => {
+                setError("Internal Server Error");
+            });
+    };
+
+    if (error !== null) {
+        return <Popup overlay setError={setDefaultError} error={error} />;
+    }
     return (
         <>
-            {inputs.map((e, i) => (
-                <div key={i} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <form>
+            <form style={{ boxShadow: 'none' }}>
+                {inputs.map((e, index) => (
+                    <div
+                        className='singleSocial'
+                        key={index}
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
                         <div>
                             {/* <label htmlFor='socialHandle'>Social Media</label> */}
                             <select
-                                value={inputs[i].socialHandle}
-                                name='socialHandle'
+                                value={inputs[index].name}
+                                name='name'
                                 id='socialHandle'
                                 onChange={(e) => {
-                                    handleSelect(e, i);
+                                    handleSelect(e, index);
                                 }}
                             >
                                 <option value='nan'>
-                                    Select Social Media Platform
+                                    {' '}
+                                    -- select an option --{' '}
                                 </option>
-                                <option value='LinkedIn'>LinkedIn</option>
-                                <option value='Instagram'>Instagram</option>
-                                <option value='YouTube'>YouTube</option>
-                                <option value='GitHub'>GitHub</option>
-                                <option value='Facebook'>Facebook</option>
-                                <option value='Twitter(x)'>Twitter(x)</option>
-                                <option value='Blog'>Blog</option>
-                                <option value='Codepen'>Codepen</option>
-                                <option value='Portfolio'>Portfolio</option>
-                                <option value='Snapchat'>Snapchat</option>
-                                <option value='Reddit'>Reddit</option>
+                                {/* <option value='nan'>
+                                    Select Social Media Platform
+                                </option> */}
+                                {options.map((data, i) => (
+                                    <option value={data} key={i}>
+                                        {data}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                         <div>
                             {/* <label htmlFor='urlInput'>URL</label> */}
                             <input
-                                name='url'
+                                name='link'
                                 type='text'
                                 id='urlInput'
-                                value={inputs[i].url}
+                                value={inputs[index].link}
                                 onChange={(e) => {
-                                    handleOnUrlChange(e, i);
+                                    handleOnUrlChange(e, index);
                                     // console.log(url);
                                 }}
                                 placeholder='Enter Url'
@@ -77,8 +129,10 @@ const Input = () => {
 
                         {inputs.length > 1 ? (
                             <button
+                                className='addSocial'
                                 onClick={(e) => {
-                                    handleRemoveSocial(i);
+                                    console.log(index);
+                                    handleRemoveSocial(e, index);
                                 }}
                             >
                                 - Remove Social
@@ -86,14 +140,25 @@ const Input = () => {
                         ) : (
                             <></>
                         )}
-                    </form>
-                    {i === inputs.length - 1 ? (
-                        <button className='addSocial' onClick={handleAddSocial}>+ Add Social</button>
-                    ) : (
-                        <></>
-                    )}
+
+                        {index === inputs.length - 1 ? (
+                            <button
+                                className='addSocial'
+                                onClick={handleAddSocial}
+                            >
+                                + Add Social
+                            </button>
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+                ))}
+                <div className='submitSocial'>
+                    <button onClick={updateTree} className='addSocial'>
+                        Create Tree
+                    </button>
                 </div>
-            ))}
+            </form>
         </>
     );
 };
