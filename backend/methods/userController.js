@@ -166,15 +166,14 @@ const functions = {
             //         message: `Your tree is alredy exists kindly visit to url/${exists.username}`,
             //         type: 'error',
             //     });
-            // }
+            // }            
             const dataObj = userModel.updateOne(
                 { username: req.params.username },
                 req.body,
                 { new: true }
-            );
-
-            await dataObj.save((error, docs) => {
+            ).exec((error, docs) => {
                 if (error) {
+                    console.log(error)
                     res.status(400).send({
                         code: 400,
                         message: 'error in creating the user tree',
