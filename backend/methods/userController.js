@@ -157,7 +157,7 @@ const functions = {
             //     });
             // } else {
             const exists = await userModel
-                .findOne({ email: req.body.email })
+                .findOne({ email: req.params.email })
                 .exec();
             // console.log(exists);
             if (exists) {
@@ -167,7 +167,11 @@ const functions = {
                     type: 'error',
                 });
             }
-            const dataObj = new userModel(req.body);
+            const dataObj = userModel.updateOne(
+                { username: req.params.username },
+                req.body,
+                { new: true }
+            );
 
             await dataObj.save((error, docs) => {
                 if (error) {
@@ -182,6 +186,7 @@ const functions = {
                         code: 201,
                         message: 'Your Tree created sucessfully',
                         type: 'success',
+                        data: docs,
                     });
                 } else {
                     res.status(400).send({
