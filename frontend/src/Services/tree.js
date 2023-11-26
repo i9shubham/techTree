@@ -1,9 +1,9 @@
-import axios from "axios";
+import { api } from './api';
 
-export const createTree = async(username, data) => {
-    return await axios({
+export const createTree = async (username, data) => {
+    return await api({
         url: `/user/createTree/${username}`,
-        method: "PUT",
+        method: 'PUT',
         data: data,
     });
-}
+};

@@ -1,7 +1,7 @@
-import axios from 'axios';
+import { api } from './api';
 
 export const fetchData = async (path) => {
-    return await axios({
+    return await api({
         url: `/user/getTree/${path}`,
         method: 'GET',
         responseType: 'json',
@@ -9,17 +9,18 @@ export const fetchData = async (path) => {
 };
 
 export const findUserName = async (username) => {
-    return await axios({
+    return await api({
         url: `/user/checkUserName/${username}`,
         method: 'GET',
-        // responseType: 'json',
+        responseType: 'json',
     });
 };
 
 export const registerUser = async (details) => {
-    return await axios({
+    return await api({
         url: `/user/signup`,
         method: 'POST',
         data: details,
+        responseType: 'json',
     });
 };
