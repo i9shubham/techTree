@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container } from '@mui/material';
-import Tree from '../Images/tree-vector.jpg';
+import Tree from '../Images/tree.png';
 import './index.css';
+import Shubham from './Shubham';
+
 const Homepage = () => {
     const navigate = useNavigate();
     const handleTreeInputClick = () => {
@@ -10,9 +11,10 @@ const Homepage = () => {
     };
     return (
         <div className='page'>
-            <Container
-                sx={{
+            <div
+                style={{
                     marginTop: '5rem',
+                    color: "#1DA1F2"
                     // height: '80vh',
                     // display: 'flex',
                     // justifyContent: 'center',
@@ -22,7 +24,7 @@ const Homepage = () => {
                 <div style={{ textAlign: 'center' }}>
                     <img className='tree' src={Tree} alt='TechTree' />
                 </div>
-                <div>
+                <div style={{color: '#1DA1F2'}}>
                     <h1>Everything you are. In one, simple link in bio.</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -49,7 +51,8 @@ const Homepage = () => {
                 </div>
 
                 <p style={{ lineHeight: 1.8 }}>Find your Roots</p>
-            </Container>
+            </div>
+            <Shubham />
         </div>
     );
 };

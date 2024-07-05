@@ -1,7 +1,8 @@
 .tree {
     height: 40vh;
     margin: 0 auto;
-    mix-blend-mode: multiply;
+    color: #1DA1F2;
+    /* mix-blend-mode: multiply; */
 }
 
 .treeinput {

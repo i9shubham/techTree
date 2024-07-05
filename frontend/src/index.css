@@ -8,9 +8,10 @@
 
 body {
   /* background-image: linear-gradient(#be3960); */
-  /* background-color: #fff; */
+  background-color: #fff;
+  color: #1DA1F2;
   /* background-image: url('/public/theme1.jpg'); */
-  background-image: linear-gradient(60deg, #c55e3a, #ee6487);
+  /* background-image: linear-gradient(60deg, #c55e3a, #ee6487); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
