@@ -13,9 +13,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 // import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
-import Person4Icon from '@mui/icons-material/Person4';
+import { FaGithub } from 'react-icons/fa';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [
+    { name: 'Home', path: '/' },
+    { name: 'Pricing', path: '/pricing' },
+    { name: '404 Not Found', path: '/not-found' },
+];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
@@ -28,7 +32,7 @@ function Navbar() {
     };
     const handleOpenUserMenu = (event) => {
         // setAnchorElUser(event.currentTarget);
-        navigate('/godfather');
+        window.open('https://github.com/i9shubham/techTree', '_blank');
     };
 
     const handleCloseNavMenu = () => {
@@ -69,6 +73,7 @@ function Navbar() {
                             letterSpacing: '.3rem',
                             color: '#000',
                             textDecoration: 'none',
+                            fontFamily: 'cursive',
                         }}
                     >
                         TechTree
@@ -86,7 +91,7 @@ function Navbar() {
                             aria-controls='menu-appbar'
                             aria-haspopup='true'
                             onClick={handleOpenNavMenu}
-                            color='inherit'
+                            color='#502274'
                         >
                             <MenuIcon />
                         </IconButton>
@@ -111,10 +116,10 @@ function Navbar() {
                             {pages.map((page) => (
                                 <MenuItem
                                     key={page}
-                                    onClick={handleCloseNavMenu}
+                                    onClick={() => navigate(page.path)}
                                 >
                                     <Typography textAlign='center'>
-                                        {page}
+                                        {page.name}
                                     </Typography>
                                 </MenuItem>
                             ))}
@@ -138,12 +143,14 @@ function Navbar() {
                             flexGrow: 1,
                             fontFamily: 'monospace',
                             fontWeight: 700,
+
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: '#000',
                             textDecoration: 'none',
+                            fontFamily: 'cursive',
                         }}
                     >
-                        LOGO
+                        TechTree
                     </Typography>
                     <Box
                         sx={{
@@ -154,10 +161,10 @@ function Navbar() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => navigate(page.path)}
                                 sx={{ my: 2, color: '#000', display: 'block' }}
                             >
-                                {page}
+                                {page.name}
                             </Button>
                         ))}
                     </Box>
@@ -168,14 +175,7 @@ function Navbar() {
                                 onClick={handleOpenUserMenu}
                                 sx={{ p: 0 }}
                             >
-                                <Person4Icon
-                                    color='#000'
-                                    sx={{
-                                        color: '#000',
-                                        width: '15',
-                                        height: '15',
-                                    }}
-                                />
+                                <FaGithub color='#502274' />
                             </IconButton>
                         </Tooltip>
                     </Box>

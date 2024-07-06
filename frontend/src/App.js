@@ -8,6 +8,8 @@ import Navbar from './Componants/Navbar';
 import Footer from './Componants/Footer';
 import UserTree from './Pages/UserTree';
 import styled from 'styled-components';
+import Shubham from './Pages/Shubham';
+import NotFound from './Pages/NotFound';
 
 const Container = styled.div`
     margin: 5px auto 5px auto;
@@ -28,10 +30,10 @@ function App() {
                 <Routes>
                     <Route exact path='/' element={<Homepage />} />
                     <Route path='/signup' element={<NewUser />} />
-                    <Route path='/*' element={<UserTree />} />
-                    {/* <Route path='*' element={<NotFound />} /> */}
+                    <Route path='/i9shubham' element={<Shubham />} />
+                    {/* <Route path='/*' element={<UserTree />} /> */}
+                    <Route path='/not-found' element={<NotFound />} />
                 </Routes>
-                <Footer />
             </Container>
         </>
     );

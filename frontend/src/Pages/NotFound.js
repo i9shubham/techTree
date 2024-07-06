@@ -5,10 +5,12 @@ const NotFound = () => {
         <div>
             <img
                 src={Gif404}
-                style={{ display: 'block', margin: '0 auto' }}
+                style={{ display: 'block', margin: '2rem auto' }}
                 alt='404 Not Found'
             />
-            <p style={{ fontWeight: 'bold' }}>You entered wrong URL</p>
+            <p style={{ fontWeight: 'bold', color: '#502274' }}>
+                You entered wrong URL
+            </p>
         </div>
     );
 };
