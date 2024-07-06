@@ -1,15 +1,13 @@
 import './Links.css';
 import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
 
 const LinkDiv = styled.div`
-    margin-top: 4rem;
+    margin-top: 1rem;
 `;
 
 const Greet = styled.p`
     font-weight: bold;
     margin-bottom: 20px;
-    color: ${(props) => props.theme.button.text};
 `;
 
 const Link = styled.div`
@@ -18,14 +16,15 @@ const Link = styled.div`
     width: 50vw;
     margin: 0 auto;
     border: 1px solid #fff;
-    background-color: ${(props) => props.theme.button.bg};
     border-radius: 5rem;
     margin-bottom: 1.2rem;
     transition: 0.3s;
-    color: ${(props) => props.theme.button.text};
+    background-color: #502274;
+    color: #fff;
     &:hover {
-        background-color: ${(props) => props.theme.button.text};
-        color: ${(props) => props.theme.button.bg};
+        background-color: #fff;
+        color: #502274;
+        border: 1px solid #502274;
     }
 `;
 
@@ -34,23 +33,21 @@ const LinkName = styled.a`
     font-size: 1rem;
     line-height: 3;
     width: 100%;
+    font-family: cursive;
     text-align: center;
 `;
 
 const Links = (props) => {
-    console.log(props.theme);
     return (
         <>
-            <ThemeProvider theme={props.theme}>
-                <LinkDiv>
-                    <Greet>Let's Connect</Greet>
-                    {props.link.map((data, key) => (
-                        <Link key={key}>
-                            <LinkName href={data.link}>{data.name}</LinkName>
-                        </Link>
-                    ))}
-                </LinkDiv>
-            </ThemeProvider>
+            <LinkDiv>
+                <Greet>Let's Connect</Greet>
+                {props.data.links.map((data, key) => (
+                    <Link key={key}>
+                        <LinkName href={data.url}>{data.title}</LinkName>
+                    </Link>
+                ))}
+            </LinkDiv>
         </>
     );
 };

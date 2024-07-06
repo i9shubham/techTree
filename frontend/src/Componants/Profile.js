@@ -8,21 +8,16 @@ const Div = styled.div`
     justify-content: center;
 `;
 
-const ProfileIcon = styled.div`
-    height: 8rem;
-    width: 8rem;
-    border-radius: 10rem;
-    text-align: center;
-    font-size: 5rem;
-`;
 const P = styled.p`
     text-align: center;
 `;
+
 const Bio = styled.p`
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 0.8rem;
     display: flex;
     justify-content: center;
+    font-family: cursive;
 `;
 const Profile = (props) => {
     console.log(props);
