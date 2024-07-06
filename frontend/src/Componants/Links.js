@@ -2,7 +2,7 @@ import './Links.css';
 import styled from 'styled-components';
 
 const LinkDiv = styled.div`
-    margin-top: 1rem;
+    //margin-top: 1rem;
 `;
 
 const Greet = styled.p`

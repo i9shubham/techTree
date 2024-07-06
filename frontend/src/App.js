@@ -10,6 +10,7 @@ import UserTree from './Pages/UserTree';
 import styled from 'styled-components';
 import Shubham from './Pages/Shubham';
 import NotFound from './Pages/NotFound';
+import Pricing from './Pages/Pricing';
 
 const Container = styled.div`
     margin: 5px auto 5px auto;
@@ -33,6 +34,7 @@ function App() {
                     <Route path='/i9shubham' element={<Shubham />} />
                     {/* <Route path='/*' element={<UserTree />} /> */}
                     <Route path='/not-found' element={<NotFound />} />
+                    <Route path='/pricing' element={<Pricing />} />
                 </Routes>
             </Container>
         </>

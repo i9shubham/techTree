@@ -35,14 +35,14 @@ const Homepage = () => {
     const navigate = useNavigate();
     const handleTreeInputClick = () => {
         if (username === 'i9shubham') navigate('/i9shubham');
-        else navigate('/signup');
+        else navigate('/not-found');
     };
     return (
         <>
             <div className='page'>
                 <div
                     style={{
-                        marginTop: '5rem',
+                        // marginTop: '5rem',
                         color: '#1877F2',
                         // height: '80vh',
                         // display: 'flex',
@@ -169,9 +169,12 @@ const Homepage = () => {
                                     input: {
                                         color: '#502274',
                                         fontWeight: 'bold',
+                                        textShadow:
+                                            '0 0 2px #fff, 0 0 12px #fff, 0 0 2px #ff00ff', // Corrected text-shadow syntax
                                     },
                                 }}
                                 onChange={(e) => setUsername(e.target.value)}
+                                autoFocus
                             />
                             <Button
                                 sx={{

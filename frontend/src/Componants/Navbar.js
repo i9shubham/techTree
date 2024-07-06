@@ -45,7 +45,7 @@ function Navbar() {
 
     return (
         <AppBar
-            position='fixed'
+            position='static'
             sx={{
                 backgroundColor: 'transparent',
                 backdropFilter: 'blur(10px)',

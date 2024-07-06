@@ -3,7 +3,7 @@ import './Profile.css';
 import styled from 'styled-components';
 
 const Div = styled.div`
-    margin-top: 5rem;
+    //margin-top: 5rem;
     display: flex;
     justify-content: center;
 `;

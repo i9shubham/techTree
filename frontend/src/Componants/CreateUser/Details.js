@@ -19,7 +19,7 @@ const Input = styled.input`
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    //margin-top: 1rem;
     color: #000;
     transition: 0.4s;
     &:focus {
@@ -72,8 +72,7 @@ const Details = (props) => {
             console.log(data);
             if (data.data.code === 201) {
                 props.setSubmit(true);
-            }
-            else{
+            } else {
                 setError(data?.data?.message);
             }
         } else {
