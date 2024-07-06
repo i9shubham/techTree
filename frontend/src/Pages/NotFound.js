@@ -9,7 +9,10 @@ const NotFound = () => {
                 alt='404 Not Found'
             />
             <p style={{ fontWeight: 'bold', color: '#502274' }}>
-                You entered wrong URL
+                It seems you haven't created any TechTree yet. Please create one{' '}
+                <a href='/signup' style={{ textDecoration: 'underline' }}>
+                    here.
+                </a>
             </p>
         </div>
     );
