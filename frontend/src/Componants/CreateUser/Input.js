@@ -2,8 +2,25 @@ import React, { useState } from 'react';
 import './Input.css';
 import { createTree } from '../../Services/tree';
 import Popup from '../../Utils/Popup';
+import styled from 'styled-components';
 
-const Input = () => {
+const Input = styled.input`
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    //margin-top: 1rem;
+    color: #000;
+    transition: 0.4s;
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 4px #000;
+    }
+    border: 1px solid #502274;
+`;
+
+const LinkInput = () => {
     const [error, setError] = useState(null);
     const [inputs, setInputs] = useState([{ name: '', link: '' }]);
     // console.log('inputs ', inputs);
@@ -58,8 +75,8 @@ const Input = () => {
     const username = window.localStorage.getItem('user');
     const updateTree = (e) => {
         e.preventDefault();
-        const socials = [...inputs]
-        createTree(username, {socials: socials})
+        const socials = [...inputs];
+        createTree(username, { socials: socials })
             .then((res) => {
                 if (res.data.code === 201) {
                     window.location.href = `/${username}`;
@@ -68,7 +85,7 @@ const Input = () => {
                 }
             })
             .catch((err) => {
-                setError("Internal Server Error");
+                setError('Internal Server Error');
             });
     };
 
@@ -114,10 +131,10 @@ const Input = () => {
                         </div>
                         <div>
                             {/* <label htmlFor='urlInput'>URL</label> */}
-                            <input
+                            <Input
                                 name='link'
                                 type='text'
-                                id='urlInput'
+                                // id='urlInput'
                                 value={inputs[index].link}
                                 onChange={(e) => {
                                     handleOnUrlChange(e, index);
@@ -153,14 +170,14 @@ const Input = () => {
                         )}
                     </div>
                 ))}
-                <div className='submitSocial'>
+                {/* <div className='submitSocial'>
                     <button onClick={updateTree} className='addSocial'>
                         Create Tree
                     </button>
-                </div>
+                </div> */}
             </form>
         </>
     );
 };
 
-export default Input;
+export default LinkInput;

@@ -30,10 +30,10 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route exact path='/' element={<Homepage />} />
+                    <Route path='/not-found' element={<NotFound />} />
                     <Route path='/signup' element={<NewUser />} />
                     <Route path='/i9shubham' element={<Shubham />} />
                     {/* <Route path='/*' element={<UserTree />} /> */}
-                    <Route path='/not-found' element={<NotFound />} />
                     <Route path='/pricing' element={<Pricing />} />
                 </Routes>
             </Container>

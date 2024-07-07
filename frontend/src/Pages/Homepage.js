@@ -7,28 +7,9 @@ import {
     TextField,
     Typography,
 } from '@mui/material';
-import Tree from '../Images/tree.png';
+import IphoneLeft from '../Images/iphone-left.png';
 import './index.css';
-import {
-    Github,
-    Instagram,
-    Linkedin,
-    Twitter,
-    Yoututbe,
-    Website,
-} from '../Utils/icons';
 import Footer from '../Componants/Footer';
-// import Shubham from './Shubham';
-
-const socialIcons = [
-    { src: Github, id: 1, x: 40, y: -100 },
-    { src: Instagram, id: 2, x: -80, y: -100 },
-    { src: Linkedin, id: 3, x: 150, y: -170 },
-    { src: Twitter, id: 4, x: -155, y: -130 },
-    { src: Yoututbe, id: 5, x: -170, y: -180 },
-    { src: Website, id: 6, x: 100, y: -250 },
-    // Add more icons as needed
-];
 
 const Homepage = () => {
     const [username, setUsername] = React.useState('i9shubham');
@@ -51,24 +32,11 @@ const Homepage = () => {
                     }}
                 >
                     <div style={{ textAlign: 'center' }}>
-                        <img className='tree' src={Tree} alt='TechTree' />
-                        {socialIcons.map((icon) => {
-                            return (
-                                <img
-                                    key={icon.id}
-                                    src={icon.src}
-                                    alt={`Social Icon ${icon.id}`}
-                                    style={{
-                                        position: 'absolute',
-                                        left: `50%`,
-                                        top: `50%`,
-                                        transform: `translate(${icon.x}px, ${icon.y}px)`,
-                                        zIndex: 0,
-                                        width: '2rem',
-                                    }}
-                                />
-                            );
-                        })}
+                        <img
+                            className='tree'
+                            src={IphoneLeft}
+                            alt='TechTree mockup'
+                        />
                     </div>
                     <div
                         style={{

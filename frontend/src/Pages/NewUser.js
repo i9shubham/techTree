@@ -16,6 +16,7 @@ const NewUser = () => {
             setLogin(true);
         }
     }, [login, submittedDetails]);
+
     return (
         <>
             <Container
@@ -23,13 +24,10 @@ const NewUser = () => {
                     marginTop: '5rem',
                 }}
             >
-                {signup === 'false' && (
-                    <Details
-                        submit={submittedDetails}
-                        setSubmit={settingFunc}
-                    />
-                )}
-                {signup === 'true' && <Input />}
+                {/* {signup === 'false' && ( */}
+                <Details submit={submittedDetails} setSubmit={settingFunc} />
+                {/* )} */}
+                {/* {signup === 'true' && <Input />} */}
             </Container>
         </>
     );

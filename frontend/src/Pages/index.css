@@ -15,8 +15,24 @@ h1 {
 .tree {
     height: 40vh;
     margin: 0 auto;
+    /* filter: drop-shadow(5px 10px 0.3rem #502274); */
+    animation: floatAnimation 2s ease-in-out infinite;
     /* color: #1877F2; */
     /* mix-blend-mode: multiply; */
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .treeinput {

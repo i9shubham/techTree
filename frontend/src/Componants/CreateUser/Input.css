@@ -20,11 +20,11 @@ form {
     width: 100%;
 }
 
-form div,
+/* form div,
 form>div>input,
 form>div>select {
     width: 90%;
-}
+} */
 
 
 #socialHandle,
@@ -53,4 +53,5 @@ form>div>select {
     position: relative;
     margin-bottom: 10px;
     font-weight: bolder;
+    border: 1px solid #502274;
 }

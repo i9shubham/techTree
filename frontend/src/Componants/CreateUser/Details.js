@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 // import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-// import Input from './Input';
+import LinkInput from './Input';
 import { findUserName, registerUser } from '../../Services/user';
 import Popup from '../../Utils/Popup';
 
@@ -26,6 +26,7 @@ const Input = styled.input`
         outline: none;
         box-shadow: 0 0 4px #000;
     }
+    border: 1px solid #502274;
 `;
 const Button = styled.button`
     padding: 0.5rem;
@@ -116,6 +117,13 @@ const Details = (props) => {
                     onSubmit={(e) => handleSubmit(e)}
                 >
                     {/* <Stack> */}
+                    <label htmlFor='name'>Name</label>
+                    <Input
+                        placeholder='John Doe'
+                        type='text'
+                        name='name'
+                        onChange={(e) => handleTextChange(e)}
+                    />
                     <label htmlFor='username'>Username</label>
                     <Input
                         placeholder='@johndoe'
@@ -130,14 +138,22 @@ const Details = (props) => {
                         name='email'
                         onChange={(e) => handleTextChange(e)}
                     />
-                    <label htmlFor='password'>Password</label>
+                    {/* <label htmlFor='password'>Password</label>
                     <Input
                         placeholder='Password'
                         type='text'
                         name='password'
                         onChange={(e) => handleTextChange(e)}
+                    /> */}
+                    <label htmlFor='bio'>Bio</label>
+                    <Input
+                        placeholder='Bio'
+                        type='text'
+                        name='bio'
+                        onChange={(e) => handleTextChange(e)}
                     />
 
+                    <LinkInput />
                     <div>
                         <Button type='submit'>Submit</Button>
                     </div>
