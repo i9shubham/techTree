@@ -43,13 +43,15 @@ const Homepage = () => {
                             color: '#502274',
                             width: '80rem',
                             margin: '0 10rem',
+                            textAlign: 'center',
+                            marginBottom: '2rem',
                         }}
                     >
                         <Typography
                             variant='h1'
                             sx={{
                                 fontSize: {
-                                    xs: '2rem',
+                                    xs: '1.2rem',
                                     sm: '3rem',
                                     md: '4rem',
                                 },
@@ -58,14 +60,22 @@ const Homepage = () => {
                             Everything you are. In one, simple{' '}
                             <strong className='heading'>link in bio.</strong>
                         </Typography>
-                        <p>
+                        <Typography
+                            variant='p'
+                            sx={{
+                                fontSize: {
+                                    xs: '0.5rem',
+                                    sm: '1rem',
+                                    md: '1rem',
+                                },
+                            }}
+                        >
                             This project is created using MERN stack and is a
                             clone of Linktree. This project healps to create a
                             single link that can be shared on social media
                             platforms and can be used to redirect to multiple
                             links. This project is created by Shubham Ingole.
-                        </p>
-                        <br />
+                        </Typography>
                     </div>
 
                     {/* <div
