@@ -5,8 +5,6 @@ import Homepage from './Pages/Homepage';
 import NewUser from './Pages/NewUser';
 // import Shubham from './Pages/Shubham';
 import Navbar from './Componants/Navbar';
-import Footer from './Componants/Footer';
-import UserTree from './Pages/UserTree';
 import styled from 'styled-components';
 import Shubham from './Pages/Shubham';
 import NotFound from './Pages/NotFound';

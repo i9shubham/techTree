@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Input.css';
-import { createTree } from '../../Services/tree';
+// import { createTree } from '../../Services/tree';
 import Popup from '../../Utils/Popup';
 import styled from 'styled-components';
 
@@ -72,22 +72,22 @@ const LinkInput = () => {
         'Other',
     ];
 
-    const username = window.localStorage.getItem('user');
-    const updateTree = (e) => {
-        e.preventDefault();
-        const socials = [...inputs];
-        createTree(username, { socials: socials })
-            .then((res) => {
-                if (res.data.code === 201) {
-                    window.location.href = `/${username}`;
-                } else {
-                    setError(res?.data?.message);
-                }
-            })
-            .catch((err) => {
-                setError('Internal Server Error');
-            });
-    };
+    // const username = window.localStorage.getItem('user');
+    // const updateTree = (e) => {
+    //     e.preventDefault();
+    //     const socials = [...inputs];
+    //     createTree(username, { socials: socials })
+    //         .then((res) => {
+    //             if (res.data.code === 201) {
+    //                 window.location.href = `/${username}`;
+    //             } else {
+    //                 setError(res?.data?.message);
+    //             }
+    //         })
+    //         .catch((err) => {
+    //             setError('Internal Server Error');
+    //         });
+    // };
 
     if (error !== null) {
         return <Popup overlay setError={setDefaultError} error={error} />;
